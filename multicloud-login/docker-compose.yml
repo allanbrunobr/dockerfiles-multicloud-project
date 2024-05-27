@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  aws-login:
+    image: aws-login:1.0
+    hostname: aws-login
+    ports:
+      - "3001:3000"
+    env_file: .env
+
+  azure-login:
+    image: azure-login:1.0  
+    hostname: azure-login
+    ports:
+      - "3002:3000"
+    env_file: .env

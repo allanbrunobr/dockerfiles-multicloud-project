@@ -1,0 +1,9 @@
+services:
+  vault:
+    image: custom-vault:latest
+    container_name: vault
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./vault-config:/vault/config
+      - ./vault-data:/vault/data
