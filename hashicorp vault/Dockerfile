@@ -11,6 +11,4 @@ COPY gcp_secret.json /vault/config/gcp_secret.json
 COPY setup-vault.sh /vault/config/setup-vault.sh
 COPY aws_policy.json /vault/config/aws_policy.json
 
-
-
 RUN chmod +x /vault/config/setup-vault.sh

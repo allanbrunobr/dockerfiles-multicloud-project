@@ -1,38 +1,37 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": [
-          "iam:CreateUser",
-          "iam:ListUsers",
-          "iam:DeleteUser",
-          "iam:CreateAccessKey",
-          "iam:DeleteAccessKey",
-          "iam:ListAccessKeys",
-          "iam:UpdateAccessKey",
-          "iam:CreateRole",
-          "iam:DeleteRole",
-          "iam:ListRoles",
-          "iam:AttachRolePolicy",
-          "iam:DetachRolePolicy",
-          "iam:PutRolePolicy",
-          "iam:DeleteRolePolicy",
-          "iam:ListRolePolicies",
-          "sts:AssumeRole",
-          "sts:GetCallerIdentity",
-          "sts:GetSessionToken",
-          "s3:ListBucket",
-          "s3:PutObject",
-          "s3:GetObject",
-          "s3:DeleteObject",
-          "rekognition:DetectLabels",
-          "rekognition:DetectFaces",
-          "rekognition:DetectText",
-          "rekognition:RecognizeCelebrities"
-        ],
-        "Resource": "*"
-      }
-    ]
-  }
-  
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateUser",
+        "iam:ListUsers",
+        "iam:DeleteUser",
+        "iam:CreateAccessKey",
+        "iam:DeleteAccessKey",
+        "iam:ListAccessKeys",
+        "iam:UpdateAccessKey",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:ListRoles",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:ListRolePolicies",
+        "sts:AssumeRole",
+        "sts:GetCallerIdentity",
+        "sts:GetSessionToken",
+        "s3:ListBucket",
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "rekognition:DetectLabels",
+        "rekognition:DetectFaces",
+        "rekognition:DetectText",
+        "rekognition:RecognizeCelebrities"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

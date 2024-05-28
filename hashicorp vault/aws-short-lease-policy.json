@@ -1,0 +1,9 @@
+{
+  "path": "aws/creds",
+  "capabilities": {
+    "read": true
+  },
+  "lease": {
+    "duration": 600
+  }
+}
