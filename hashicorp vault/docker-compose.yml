@@ -1,6 +1,6 @@
 services:
   vault:
-    image: custom-vault:latest
+    image: custom-vault:2.0
     container_name: vault
     ports:
       - "8200:8200"
