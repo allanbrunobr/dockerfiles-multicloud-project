@@ -9,5 +9,8 @@ CMD ["vault", "server", "-dev", "-dev-root-token-id=root", "-dev-listen-address=
 COPY providers-policy.hcl /vault/config/providers-policy.hcl
 COPY gcp_secret.json /vault/config/gcp_secret.json
 COPY setup-vault.sh /vault/config/setup-vault.sh
+COPY aws_policy.json /vault/config/aws_policy.json
+
+
 
 RUN chmod +x /vault/config/setup-vault.sh

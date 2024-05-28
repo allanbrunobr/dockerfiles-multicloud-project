@@ -22,18 +22,21 @@ vault kv put secret/azure client_id=22ba032b-0cd7-4920-9677-1767839d8420 client_
 # Store GCP secret (assuming the JSON content is stored in a file named gcp_secret.json)
 vault kv put secret/gcp @/vault/config/gcp_secret.json
 
+
 vault secrets enable -path=aws aws
 
+# USER vault-user-generated
+# AKIAVRUVTFYRPXL3CJLH
+# K2gyvgSzhaKg8wte5YkVSAA3ye6gbCWexVW1QOpH
 
-vault write aws/config/root \
-  access_key=AKIAVRUVTFYROQ5MQ3CG \
-  secret_key=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 \
-  region=default
+# AKIAVRUVTFYROQ5MQ3CG
+# ZxQ2N4v/vntDuPRQb+ikVSdyfB+mvBCxeOQ0J/Fu
+ vault write aws/config/root \
+   access_key=AKIAVRUVTFYRFH6X64V7 \
+   secret_key=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 \
+   region=default
+
 
 vault write aws/roles/my-role \
-  credential_type=iam_user \
-  policy_arns=arn:aws:iam::aws:policy/AdministratorAccess \
-  ttl=1h
-
-
-
+    credential_type=iam_user \
+    policy_document="${policy_document}"
