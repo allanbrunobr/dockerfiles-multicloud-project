@@ -5,3 +5,7 @@ path "secret/*" {
 path "sys/mounts/*" {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
+
+path "/gcp/roleset/*" {
+    capabilities = ["read"]
+}
