@@ -10,5 +10,6 @@ resource "//cloudresourcemanager.googleapis.com/projects/app-springboot-project"
     "roles/pubsub.admin",
     "roles/iam.securityAdmin",
     "roles/viewer",
+    "roles/iam.serviceAccountAdmin",
   ]
 }
