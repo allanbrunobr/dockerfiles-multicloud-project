@@ -1,7 +1,6 @@
 services:
   vault:
-    image: custom-vault:2.0
-    container_name: vault
+    image: hashicorp/vault:1.17.2
     ports:
       - "8200:8200"
     volumes:

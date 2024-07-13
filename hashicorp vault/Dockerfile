@@ -1,4 +1,4 @@
-FROM vault:1.13.3
+FROM hashicorp/vault:1.17.2
 
 ENV VAULT_ADDR='http://127.0.0.1:8200'
 
