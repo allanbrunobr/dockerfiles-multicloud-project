@@ -21,7 +21,8 @@ vault kv put secret/gcp google_api_key_places=AIzaSyBMnDHDoSUU1t1DqEXWiF7FheEeMK
 #AWS
 vault secrets enable -path=aws aws
 
- vault write aws/config/root \
+
+vault write aws/config/root \
    access_key=AKIAVRUVTFYRFH6X64V7 \
    secret_key=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 \
    region=default
