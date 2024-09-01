@@ -1,15 +1,24 @@
 FROM hashicorp/vault:1.17.2
 
-ENV VAULT_ADDR='http://127.0.0.1:8200'
+ENV VAULT_ADDR='http://0.0.0.0:8200'
 
-# Run Vault server in development mode
-CMD ["vault", "server", "-dev", "-dev-root-token-id=root", "-dev-listen-address=0.0.0.0:8200"]
+# Criar diretórios necessários
+RUN mkdir -p /vault/logs /vault/file /vault/config
 
-# Use a script to perform additional setup after Vault has started
-COPY providers-policy.hcl /vault/config/providers-policy.hcl
-COPY gcp_secret.json /vault/config/gcp_secret.json
-COPY setup-vault.sh /vault/config/setup-vault.sh
-COPY aws_policy_role_iam.json /vault/config/aws_policy_role_iam.json
-COPY gcp_access_policy.hcl /vault/config/gcp_access_policy.hcl
+# Copiar arquivos de configuração
+COPY ["providers-policy.hcl", "gcp_secret.json", "setup-vault.sh", "aws_policy_role_iam.json", "gcp_access_policy.hcl", "/vault/config/"]
 
-RUN chmod +x /vault/config/setup-vault.sh
+# Dar permissões adequadas
+RUN chmod +x /vault/config/setup-vault.sh && \
+    chown -R vault:vault /vault/logs /vault/file /vault/config
+
+# Declarar volumes
+VOLUME ["/vault/logs", "/vault/file", "/vault/config"]
+
+EXPOSE 8200
+
+# Usar um script de inicialização
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
