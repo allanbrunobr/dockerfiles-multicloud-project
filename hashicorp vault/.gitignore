@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Configurações de editor e IDE
+/.idea/
+/*.iml
+.vscode/
+
+# Arquivos de compilação do Gradle
+.gradle/
+/build/
+
+# Wrapper do Gradle
+/gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
+
+# Arquivos gerados pelo sistema
+*~ 
+*.log 
+*.swp 
+*.swo 
+*.tmp 
+
+# Arquivos de ambiente
+.env
+*.env
+
+# Arquivos de chaves e segredos
+hashicorp vault/gcp_secret.json
+
+# Arquivos de logs
+/logs/
+*.log
+
+# Arquivos temporários
+/tmp/
