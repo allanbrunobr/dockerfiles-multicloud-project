@@ -6,7 +6,7 @@ ENV VAULT_ADDR='http://0.0.0.0:8200'
 RUN mkdir -p /vault/logs /vault/file /vault/config
 
 # Copiar arquivos de configuração
-COPY ["providers-policy.hcl", "gcp_secret.json", "setup-vault.sh", "aws_policy_role_iam.json", "gcp_access_policy.hcl", "/vault/config/"]
+COPY ["providers-policy.hcl", "setup-vault.sh", "aws_policy_role_iam.json", "gcp_access_policy.hcl", "/vault/config/"]
 
 # Dar permissões adequadas
 RUN chmod +x /vault/config/setup-vault.sh && \

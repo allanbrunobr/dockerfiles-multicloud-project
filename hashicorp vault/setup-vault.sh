@@ -1,7 +1,14 @@
 #!/bin/sh
 export VAULT_ADDR='http://0.0.0.0:8200'
 export VAULT_TOKEN=root
-export GOOGLE_APPLICATION_CREDENTIALS='/vault/config/gcp_secret.json' 
+
+# Verifique se o arquivo de credenciais existe
+if [ -f "/vault/config/gcp_secret.json" ]; then
+    export GOOGLE_APPLICATION_CREDENTIALS='/vault/config/gcp_secret.json'
+else
+    echo "Arquivo gcp_secret.json não encontrado. Certifique-se de montá-lo no container."
+    exit 1
+fi
 
 # Wait for Vault to be ready
 until vault status; do
