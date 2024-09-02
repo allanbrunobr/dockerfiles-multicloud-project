@@ -19,6 +19,9 @@ EXPOSE 8200
 
 # Usar um script de inicialização
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh /usr/local/bin/setup-vault.sh && \
+    chown -R vault:vault /vault/logs /vault/file /vault/config
+
 
 ENTRYPOINT ["docker-entrypoint.sh"]
